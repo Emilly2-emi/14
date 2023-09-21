@@ -7,3 +7,8 @@ h5{
     bottom: 0;
     width: 100%;
 }
+canvas{
+    border: 2px rgb(153, 202, 255);
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(91, 154, 255);
+}

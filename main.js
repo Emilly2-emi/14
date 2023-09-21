@@ -30,12 +30,25 @@ ball = {
 
 function setup(){
   canvas =  createCanvas(700,550);
+  canvas.parent('canvas');
+  video=createCapture(VIDEO);
+  video.size(700,550);
+  video.hide();
+ poseNet=ml5.poseNet(video,modelLoaded);
+
 }
+
+function modelLoaded(){
+  console.log("Modelo Carregado");
+}
+
 
 
 function draw(){
 
-  background(0); 
+  background(0);
+  
+  image(video,0,0,700,550);
 
   fill("black");
   stroke("black");
