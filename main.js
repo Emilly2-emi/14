@@ -1,3 +1,8 @@
+pldx=0;
+pldy=0;
+
+pldp=0;
+
 paddle1 = 10;
 paddle2 = 10;
 
@@ -35,7 +40,17 @@ function setup(){
   video.size(700,550);
   video.hide();
  poseNet=ml5.poseNet(video,modelLoaded);
+ poseNet.on("pose",gotPoses);
 
+}
+
+function gotPoses(results){
+  if(results.length>0){
+    pldx=results[0].pose.rightWrist.x;
+    pldy=results[0].pose.rightWrist.y;
+
+    pldp=results[0].pose.rightWrist.score;
+  }
 }
 
 function modelLoaded(){
