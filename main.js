@@ -49,7 +49,8 @@ function gotPoses(results){
     pldx=results[0].pose.rightWrist.x;
     pldy=results[0].pose.rightWrist.y;
 
-    pldp=results[0].pose.rightWrist.score;
+    pldp=results[0].pose.rightWrist.keypoints[10].score;
+    console.log(pldp);
   }
 }
 
@@ -101,6 +102,12 @@ function draw(){
 
   //Chamar a função move() (muito importante para o jogo)
   move();
+
+  if(pldp>0.2){
+    fill(0,0,255);
+    stroke(210,0,255);
+    circle(pldx,pldy,100);
+  }
 }
 
 
