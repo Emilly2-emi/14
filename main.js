@@ -49,7 +49,7 @@ function gotPoses(results){
     pldx=results[0].pose.rightWrist.x;
     pldy=results[0].pose.rightWrist.y;
 
-    pldp=results[0].pose.rightWrist.keypoints[10].score;
+    pldp=results[0].pose.keypoints[10].score;
     console.log(pldp);
   }
 }
